@@ -33,6 +33,30 @@ namespace CustomListTests
             Assert.AreEqual(expected, list[4]);
         }
 
+        public void Add_Int3()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
+            int number = 5;
+            int expected = 1;
+            //Act
+            list.Add(number);
+            //Assert
+            Assert.AreEqual(expected, list[0]);
+        }
+
+        public void Add_Int4()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
+            int number = 5;
+            int expected = 4;
+            //Act
+            list.Add(number);
+            //Assert
+            Assert.AreEqual(expected, list[3]);
+        }
+
         [TestMethod]
         public void Add_Int_Initializer() 
         {
@@ -59,6 +83,19 @@ namespace CustomListTests
         }
 
         [TestMethod]
+        public void Add_Int_ToIndexTwo_Initializer2()
+        {
+            //Arrange
+            int number1 = 1;
+            int number2 = 2;
+            int expected = 1;
+            //Act
+            CustomList<int> list = new CustomList<int>() { number1, number2 };
+            //Assert
+            Assert.AreEqual(expected, list[0]);
+        }
+
+        [TestMethod]
         public void Add_String() 
         {
             //Arrange
@@ -81,6 +118,30 @@ namespace CustomListTests
             list.Add(team);
             //Assert
             Assert.AreEqual(expected, list[4]);
+        }
+
+        public void Add_string3()
+        {
+            //Arrange
+            CustomList<string> list = new CustomList<string>() { "vikings", "bears", "lions", "seahawks" };
+            string team = "packers";
+            string expected = "vikings";
+            //Act
+            list.Add(team);
+            //Assert
+            Assert.AreEqual(expected, list[0]);
+        }
+
+        public void Add_string4()
+        {
+            //Arrange
+            CustomList<string> list = new CustomList<string>() { "vikings", "bears", "lions", "seahawks" };
+            string team = "packers";
+            string expected = "seahawks";
+            //Act
+            list.Add(team);
+            //Assert
+            Assert.AreEqual(expected, list[3]);
         }
 
         [TestMethod]
@@ -109,14 +170,14 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Remove_Int()
+        public void Add_String_ToIndexTwo_Initializer2()
         {
             //Arrange
-            CustomList<int> list = new CustomList<int>() { 1 };
-            int number = 1;
-            int expected = 1;
+            string team1 = "seahawks";
+            string team2 = "packers";
+            string expected = "seahawks";
             //Act
-            list.Remove(number);
+            CustomList<int> list = new CustomList<int>() { team1, team2 };
             //Assert
             Assert.AreEqual(expected, list[0]);
         }
@@ -146,15 +207,55 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void IntToString() 
+        public void Remove_Int()
         {
             //Arrange
-            CustomList<int> list = new CustomList<int>();
-            
+            CustomList<int> list = new CustomList<int>() { 1 };
+            int number = 1;
+            int expected = 0;
             //Act
-            
+            list.Remove(number);
             //Assert
-            Assert.AreEqual();
+            Assert.AreEqual(expected, list.Count);
+        }
+
+        [TestMethod]
+        public void Remove_Int2()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
+            int number = 1;
+            int expected = 2;
+            //Act
+            list.Remove(number);
+            //Assert
+            Assert.AreEqual(expected, list[0]);
+        }
+
+        [TestMethod]
+        public void Remove_Int3()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
+            int number = 1;
+            int expected = 4;
+            //Act
+            list.Remove(number);
+            //Assert
+            Assert.AreEqual(expected, list[2]);
+        }
+
+        [TestMethod]
+        public void Remove_Int4()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
+            int number = 1;
+            int expected = 3;
+            //Act
+            list.Remove(number);
+            //Assert
+            Assert.AreEqual(expected, list[1]);
         }
     }
 }
