@@ -162,7 +162,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Add_string2() 
+        public void Add_String2() 
         {
             //Arrange
             CustomList<string> list = new CustomList<string>() { "vikings", "bears", "lions", "seahawks" };
@@ -175,7 +175,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Add_string3()
+        public void Add_String3()
         {
             //Arrange
             CustomList<string> list = new CustomList<string>() { "vikings", "bears", "lions", "seahawks" };
@@ -188,7 +188,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Add_string4()
+        public void Add_String4()
         {
             //Arrange
             CustomList<string> list = new CustomList<string>() { "vikings", "bears", "lions", "seahawks" };
@@ -344,6 +344,19 @@ namespace CustomListTests
         }
 
         [TestMethod]
+        public void Remove_Int_Count2()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
+            int number = 1;
+            int expected = 3;
+            //Act
+            list.Remove(number);
+            //Assert
+            Assert.AreEqual(expected, list.count);
+        }
+
+        [TestMethod]
         public void Remove_Int2()
         {
             //Arrange
@@ -393,6 +406,169 @@ namespace CustomListTests
             list.Remove(number);
             //Assert
             Assert.AreEqual(expected, list[0]);
+        }
+
+        [TestMethod]
+        public void Remove_String_Count()
+        {
+            //Arrange
+            CustomList<string> list = new CustomList<string>() { "packers" };
+            string team = "packers";
+            int expected = 0;
+            //Act
+            list.Remove(team);
+            //Assert
+            Assert.AreEqual(expected, list.Count);
+        }
+
+        [TestMethod]
+        public void Remove_String_Count2()
+        {
+            //Arrange
+            CustomList<string> list = new CustomList<string>() { "vikings", "bears", "lions", "packers" };
+            string team = "packers";
+            int expected = 3;
+            //Act
+            list.Remove(team);
+            //Assert
+            Assert.AreEqual(expected, list.Count);
+        }
+
+        [TestMethod]
+        public void Remove_String()
+        {
+            //Arrange
+            CustomList<string> list = new CustomList<string>() { "vikings", "packers", "lions", "seahawks" };
+            string team = "packers";
+            string expected = "vikings";
+            //Act
+            list.Remove(team);
+            //Assert
+            Assert.AreEqual(expected, list[0]);
+        }
+
+        [TestMethod]
+        public void Remove_String2()
+        {
+            //Arrange
+            CustomList<string> list = new CustomList<string>() { "vikings", "packers", "lions", "seahawks" };
+            string team = "packers";
+            string expected = "lions";
+            //Act
+            list.Remove(team);
+            //Assert
+            Assert.AreEqual(expected, list[1]);
+        }
+
+        [TestMethod]
+        public void Remove_String3()
+        {
+            //Arrange
+            CustomList<string> list = new CustomList<string>() { "vikings", "packers", "lions", "seahawks" };
+            string team = "packers";
+            string expected = "seahawks";
+            //Act
+            list.Remove(team);
+            //Assert
+            Assert.AreEqual(expected, list[2]);
+        }
+
+        [TestMethod]
+        public void Remove_Object_Count()
+        {
+            //Arrange
+            CustomObject object1 = new CustomObject();
+            CustomList<CustomObject> list = new CustomList<CustomObject>() { object1 };
+            int expected = 0;
+            //Act
+            list.Remove(object1);
+            //Assert
+            Assert.AreEqual(expected, list.Count);
+        }
+
+        [TestMethod]
+        public void Remove_Object_Count2()
+        {
+            //Arrange
+            CustomObject object1 = new CustomObject();
+            CustomObject object2 = new CustomObject();
+            CustomObject object3 = new CustomObject();
+            CustomList<CustomObject> list = new CustomList<CustomObject>() { object1, object2, object3 };
+            int expected = 2;
+            //Act
+            list.Remove(object2);
+            //Assert
+            Assert.AreEqual(expected, list.Count);
+        }
+
+        [TestMethod]
+        public void Remove_Object()
+        {
+            //Arrange
+            CustomObject object1 = new CustomObject();
+            CustomObject object2 = new CustomObject();
+            CustomObject object3 = new CustomObject();
+            CustomList<CustomObject> list = new CustomList<CustomObject>() { object1, object2, object3 };
+            //Act
+            list.Remove(object2);
+            //Assert
+            Assert.AreEqual(object3, list[1]);
+        }
+
+        [TestMethod]
+        public void Remove_Object2()
+        {
+            //Arrange
+            CustomObject object1 = new CustomObject();
+            CustomObject object2 = new CustomObject();
+            CustomObject object3 = new CustomObject();
+            CustomList<CustomObject> list = new CustomList<CustomObject>() { object1, object2, object3 };
+            //Act
+            list.Remove(object1);
+            //Assert
+            Assert.AreEqual(object2, list[0]);
+        }
+
+        [TestMethod]
+        public void Remove_Object3()
+        {
+            //Arrange
+            CustomObject object1 = new CustomObject();
+            CustomObject object2 = new CustomObject();
+            CustomObject object3 = new CustomObject();
+            CustomList<CustomObject> list = new CustomList<CustomObject>() { object1, object2, object3 };
+            //Act
+            list.Remove(object1);
+            //Assert
+            Assert.AreEqual(object3, list[1]);
+        }
+
+        [TestMethod]
+        public void Remove_Object4()
+        {
+            //Arrange
+            CustomObject object1 = new CustomObject();
+            CustomObject object2 = new CustomObject();
+            CustomObject object3 = new CustomObject();
+            CustomList<CustomObject> list = new CustomList<CustomObject>() { object1, object2, object3 };
+            //Act
+            list.Remove(object3);
+            //Assert
+            Assert.AreEqual(object2, list[1]);
+        }
+
+        [TestMethod]
+        public void Remove_Object5()
+        {
+            //Arrange
+            CustomObject object1 = new CustomObject();
+            CustomObject object2 = new CustomObject();
+            CustomObject object3 = new CustomObject();
+            CustomList<CustomObject> list = new CustomList<CustomObject>() { object1, object2, object3 };
+            //Act
+            list.Remove(object3);
+            //Assert
+            Assert.AreEqual(object1, list[0]);
         }
     }
 }
