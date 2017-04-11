@@ -1,2 +1,7 @@
 C:\Users\EvanC\Documents\GitHub\CustomList\CustomList\bin\Debug\CustomList.exe.config
 C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomList\bin\Debug\CustomList.exe.config
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomList\bin\Debug\CustomList.exe
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomList\bin\Debug\CustomList.pdb
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomList\obj\Debug\CustomList.csprojResolveAssemblyReference.cache
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomList\obj\Debug\CustomList.exe
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomList\obj\Debug\CustomList.pdb
