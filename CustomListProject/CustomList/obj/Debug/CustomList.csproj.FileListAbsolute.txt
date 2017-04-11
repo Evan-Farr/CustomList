@@ -1,1 +1,2 @@
 C:\Users\EvanC\Documents\GitHub\CustomList\CustomList\bin\Debug\CustomList.exe.config
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomList\bin\Debug\CustomList.exe.config
