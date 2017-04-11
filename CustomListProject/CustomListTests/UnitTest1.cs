@@ -7,6 +7,8 @@ namespace CustomListTests
     [TestClass]
     public class UnitTest1
     {
+        //Here Down are all the add and remove tests.
+
         [TestMethod]
         public void Add_Int_Count()
         {
@@ -408,6 +410,32 @@ namespace CustomListTests
             Assert.AreEqual(expected, list[0]);
         }
 
+        //[TestMethod]
+        //public void RemoveQuanity_Int()
+        //{
+            //Arrange
+            //CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4, 5 };
+            //int amount = 3;
+            //int expected = new CustomList<int>() { 4, 5 };
+            //Act
+            //list.RemoveQuanity(amount);
+            //Assert
+            //Assert.AreEqual(expected, list);
+        //}
+
+        //[TestMethod]
+        //public void RemoveQuanity_Int_2()
+        //{
+            //Arrange
+            //CustomList<int> list = new CustomList<int>() { 1, 1, 1, 1, 1 };
+            //int amount = 2;
+            //int expected = (list = { 1, 1, 1 });
+            //Act
+            //list.RemoveQuanity(amount);
+            //Assert
+            //Assert.AreEqual(expected, list);
+        //}
+
         [TestMethod]
         public void Remove_String_Count()
         {
@@ -569,6 +597,49 @@ namespace CustomListTests
             list.Remove(object3);
             //Assert
             Assert.AreEqual(object1, list[0]);
+        }
+
+        // Here Down are Count Tests (they have nothing to do with add or remove).
+
+        [TestMethod]
+        public void Count_CustomObject()
+        {
+            //Arrange
+            CustomObject object1 = new CustomObject();
+            CustomObject object2 = new CustomObject();
+            CustomObject object3 = new CustomObject();
+            CustomList<CustomObject> list = new CustomList<CustomObject>() { object1, object2, object3 };
+            int expected = 3;
+            //Act
+            list.GetCount();
+            //Assert
+            Assert.AreEqual(expected, list.Count);
+        }
+
+        [TestMethod]
+        public void Count_Int()
+        {
+            //Arrange
+            
+            CustomList<int> list = new CustomList<int>() { 1, 2, 5, 3, 5, 6, 5 };
+            int expected = 7;
+            //Act
+            list.GetCount();
+            //Assert
+            Assert.AreEqual(expected, list.Count);
+        }
+
+        [TestMethod]
+        public void Count_String()
+        {
+            //Arrange
+
+            CustomList<string> list = new CustomList<string>() { "hello", "goodbye", "shalome", "adios" };
+            int expected = 4;
+            //Act
+            list.GetCount();
+            //Assert
+            Assert.AreEqual(expected, list.Count);
         }
     }
 }
