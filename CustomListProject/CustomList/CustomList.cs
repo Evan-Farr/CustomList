@@ -22,6 +22,15 @@ namespace CustomList
             list = new T[capacity];
         }
 
+        public int GetCount()
+        {
+            foreach(T item in list)
+            {
+                count += 1;
+            }
+            return count;
+        }
+
         public void Add(T item)
         {
             if(count < capacity)
