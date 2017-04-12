@@ -18,7 +18,7 @@ namespace CustomList
         public CustomList()
         {
             count = 0;
-            capacity = 10;
+            capacity = 2;
             list = new T[capacity];
         }
 
@@ -35,12 +35,12 @@ namespace CustomList
         {
             if(count < capacity)
             {
-
+                list[count] = item;
                 count += 1;
             }
             else
             {
-                list = new T[capacity + 1];
+                list = new T[capacity * 2];
                 
             }
         }
