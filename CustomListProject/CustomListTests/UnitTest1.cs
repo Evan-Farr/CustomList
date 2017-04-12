@@ -617,7 +617,7 @@ namespace CustomListTests
 
         //Here Down are ToString Tests.
 
-        [TestMethod]//not sure how to do this.
+        [TestMethod]
         public void Override_ToString_String()
         {
             //Arrange
@@ -629,7 +629,7 @@ namespace CustomListTests
             Assert.AreEqual(expected, result);
         }
 
-        [TestMethod]//not sure how to do this.
+        [TestMethod]
         public void Override_ToString_Int()
         {
             //Arrange
@@ -641,7 +641,7 @@ namespace CustomListTests
             Assert.AreEqual(expected, result);
         }
 
-        [TestMethod]//not sure how to do this.
+        [TestMethod]
         public void Override_ToString_Objects()
         {
             //Arrange

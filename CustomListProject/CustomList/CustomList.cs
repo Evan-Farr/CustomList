@@ -40,8 +40,10 @@ namespace CustomList
             }
             else
             {
-                list = new T[capacity * 2];
-                
+                T[] listTwo = new T[capacity * 2];
+                list.CopyTo(listTwo, 0);
+                listTwo[count] = item;
+                list = listTwo;
             }
         }
     }
