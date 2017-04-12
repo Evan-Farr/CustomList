@@ -16,10 +16,10 @@ namespace CustomList
 
             //Customer<int> custom = new Customer<int>();
             //custom.Count;
-            CustomList<int> list = new CustomList<int>();
-            list.Add(1);
-            list.Add(5);
-            list.Add(9);
+            CustomList<int> array = new CustomList<int>();
+            array.Add(1);
+            array.Add(5);
+            array.Add(9);
         }
     }
 }

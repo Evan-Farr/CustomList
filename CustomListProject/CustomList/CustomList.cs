@@ -10,7 +10,7 @@ namespace CustomList
     {
         private int count;
         private int capacity;
-        public T[] list;
+        public T[] array;
 
         public int Count { get { return count; } }
         public int Capacity { get { return capacity; } set { capacity = value; } }
@@ -19,12 +19,12 @@ namespace CustomList
         {
             count = 0;
             capacity = 2;
-            list = new T[capacity];
+            array = new T[capacity];
         }
 
         public int GetCount()
         {
-            foreach(T item in list)
+            foreach(T item in array)
             {
                 count += 1;
             }
@@ -35,15 +35,18 @@ namespace CustomList
         {
             if(count < capacity)
             {
-                list[count] = item;
+                array[count] = item;
                 count += 1;
             }
             else
             {
-                T[] listTwo = new T[capacity * 2];
-                list.CopyTo(listTwo, 0);
-                listTwo[count] = item;
-                list = listTwo;
+                T[] tempArray = new T[capacity * 2];
+                for(int i = 0; i < count; i++)
+                {
+                    tempArray[i] = array[i];
+                }
+                tempArray[count] = item;
+                array = tempArray;
             }
         }
     }
