@@ -682,7 +682,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Zip_Int()
+        public void Zip_String()
         {
             //Arrange
             CustomList<string> greetings = new CustomList<string>() { "Hello", "Hola", "Sup" };
@@ -692,6 +692,88 @@ namespace CustomListTests
             CustomList<string> result = greetings.ZipTo(goodbyes);
             //Assert
             Assert.AreEqual(expected, result);
+        }
+
+        //Here Down are Overloading + operator tests
+
+        [TestMethod]
+        public void OverLoad_Plus_Int()
+        {
+            //Arrange
+            CustomList<int> firstList = new CustomList<int>() { 1, 3, 5 };
+            CustomList<int> secondList = new CustomList<int>() { 2, 4, 6 };
+            CustomList<int> expected = new CustomList<int>() { 1, 3, 5, 2, 4, 6 };
+            //Act
+            CustomList<int> thirdList = firstList + secondList;
+            //Assert
+            Assert.AreEqual(expected, thirdList);
+        }
+
+        [TestMethod]
+        public void OverLoad_Plus_String()
+        {
+            //Arrange
+            CustomList<string> firstList = new CustomList<string>() { "Hello", "Hola", "Sup" };
+            CustomList<string> secondList = new CustomList<string>() { "GoodBye", "Adios", "Cya" };
+            CustomList<string> expected = new CustomList<string>() { "Hello", "Hola", "Sup", "GoodBye", "Adios", "Cya" };
+            //Act
+            CustomList<string> thirdList = firstList + secondList;
+            //Assert
+            Assert.AreEqual(expected, thirdList);
+        }
+
+        [TestMethod]
+        public void OverLoad_Plus_Object()
+        {
+            //Arrange
+            CustomList<CustomObject> firstList = new CustomList<CustomObject>() { object1, object3, };
+            CustomList<CustomObject> secondList = new CustomList<CustomObject>() { object2, object4 };
+            CustomList<CustomObject> expected = new CustomList<CustomObject>() { object1, object3, object2, object4 };
+            //Act
+            CustomList<CustomObject> thirdList = firstList + secondList;
+            //Assert
+            Assert.AreEqual(expected, thirdList);
+        }
+
+        //Here Down are Overloading - operator tests
+
+        [TestMethod]
+        public void OverLoad_Minus_Int()
+        {
+            //Arrange
+            CustomList<int> firstList = new CustomList<int>() { 1, 2, 4 };
+            CustomList<int> secondList = new CustomList<int>() { 2, 4, 6 };
+            CustomList<int> expected = new CustomList<int>() { 1, 2, 4, 6 };
+            //Act
+            CustomList<int> thirdList = firstList - secondList;
+            //Assert
+            Assert.AreEqual(expected, thirdList);
+        }
+
+        [TestMethod]
+        public void OverLoad_Minus_String()
+        {
+            //Arrange
+            CustomList<string> firstList = new CustomList<string>() { "Hello", "Hola", "Cya" };
+            CustomList<string> secondList = new CustomList<string>() { "Hello", "Cya" };
+            CustomList<string> expected = new CustomList<string>() { "Hello", "Hola", "Cya" };
+            //Act
+            CustomList<string> thirdList = firstList - secondList;
+            //Assert
+            Assert.AreEqual(expected, thirdList);
+        }
+
+        [TestMethod]
+        public void OverLoad_Minus_Object()
+        {
+            //Arrange
+            CustomList<CustomObject> firstList = new CustomList<CustomObject>() { object1, object3, object2 };
+            CustomList<CustomObject> secondList = new CustomList<CustomObject>() { object2, object4 };
+            CustomList<CustomObject> expected = new CustomList<CustomObject>() { object1, object3, object2, object4 };
+            //Act
+            CustomList<CustomObject> thirdList = firstList - secondList;
+            //Assert
+            Assert.AreEqual(expected, thirdList);
         }
     }
 }
