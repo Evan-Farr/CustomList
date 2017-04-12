@@ -1,1 +1,9 @@
 C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomListTests\obj\Debug\CustomListTests.csprojResolveAssemblyReference.cache
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomListTests\bin\Debug\CustomListTests.dll
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomListTests\bin\Debug\CustomListTests.pdb
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomListTests\bin\Debug\CustomList.exe
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomListTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomListTests\bin\Debug\CustomList.pdb
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomListTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomListTests\obj\Debug\CustomListTests.dll
+C:\Users\EvanC\Documents\GitHub\CustomList\CustomListProject\CustomListTests\obj\Debug\CustomListTests.pdb
