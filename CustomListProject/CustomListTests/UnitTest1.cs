@@ -585,7 +585,7 @@ namespace CustomListTests
             CustomList<CustomObject> list = new CustomList<CustomObject>() { object1, object2, object3 };
             int expected = 3;
             //Act
-            list.GetCount();
+            list.Count;
             //Assert
             Assert.AreEqual(expected, list.Count);
         }
@@ -598,7 +598,7 @@ namespace CustomListTests
             CustomList<int> list = new CustomList<int>() { 1, 2, 5, 3, 5, 6, 5 };
             int expected = 7;
             //Act
-            list.GetCount();
+            list.Count;
             //Assert
             Assert.AreEqual(expected, list.Count);
         }
@@ -610,7 +610,7 @@ namespace CustomListTests
             CustomList<string> list = new CustomList<string>() { "hello", "goodbye", "shalome", "adios" };
             int expected = 4;
             //Act
-            list.GetCount();
+            list.GetCount;
             //Assert
             Assert.AreEqual(expected, list.Count);
         }
@@ -743,7 +743,7 @@ namespace CustomListTests
             //Arrange
             CustomList<int> firstList = new CustomList<int>() { 1, 2, 4 };
             CustomList<int> secondList = new CustomList<int>() { 2, 4, 6 };
-            CustomList<int> expected = new CustomList<int>() { 1, 2, 4, 6 };
+            CustomList<int> expected = new CustomList<int>() { 1 };
             //Act
             CustomList<int> thirdList = firstList - secondList;
             //Assert
@@ -756,7 +756,7 @@ namespace CustomListTests
             //Arrange
             CustomList<string> firstList = new CustomList<string>() { "Hello", "Hola", "Cya" };
             CustomList<string> secondList = new CustomList<string>() { "Hello", "Cya" };
-            CustomList<string> expected = new CustomList<string>() { "Hello", "Hola", "Cya" };
+            CustomList<string> expected = new CustomList<string>() { "Hola" };
             //Act
             CustomList<string> thirdList = firstList - secondList;
             //Assert
@@ -769,7 +769,7 @@ namespace CustomListTests
             //Arrange
             CustomList<CustomObject> firstList = new CustomList<CustomObject>() { object1, object3, object2 };
             CustomList<CustomObject> secondList = new CustomList<CustomObject>() { object2, object4 };
-            CustomList<CustomObject> expected = new CustomList<CustomObject>() { object1, object3, object2, object4 };
+            CustomList<CustomObject> expected = new CustomList<CustomObject>() { object1, object3 };
             //Act
             CustomList<CustomObject> thirdList = firstList - secondList;
             //Assert

@@ -10,6 +10,12 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
+            //mike's comments:
+            //List<int> x = new List<int>();
+            //x.Count;
+
+            //Customer<int> custom = new Customer<int>();
+            //custom.Count;
         }
     }
 }
