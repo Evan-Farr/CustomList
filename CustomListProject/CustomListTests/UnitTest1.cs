@@ -23,7 +23,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Add_Int() 
+        public void Add_Int()
         {
             //Arrange
             CustomList<int> list = new CustomList<int>();
@@ -36,7 +36,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Add_Int2() 
+        public void Add_Int2()
         {
             //Arrange
             CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
@@ -75,7 +75,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Add_Int_Initializer() 
+        public void Add_Int_Initializer()
         {
             //Arrange
             int number = 1;
@@ -99,7 +99,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Add_Int_ToIndexTwo_Initializer() 
+        public void Add_Int_ToIndexTwo_Initializer()
         {
             //Arrange
             int number1 = 1;
@@ -138,7 +138,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Add_String() 
+        public void Add_String()
         {
             //Arrange
             CustomList<string> list = new CustomList<string>();
@@ -164,7 +164,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Add_String2() 
+        public void Add_String2()
         {
             //Arrange
             CustomList<string> list = new CustomList<string>() { "vikings", "bears", "lions", "seahawks" };
@@ -215,7 +215,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Add_String_Initializer() 
+        public void Add_String_Initializer()
         {
             //Arrange
             string team = "packers";
@@ -410,32 +410,6 @@ namespace CustomListTests
             Assert.AreEqual(expected, list[0]);
         }
 
-        //[TestMethod]
-        //public void RemoveQuanity_Int()
-        //{
-            //Arrange
-            //CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4, 5 };
-            //int amount = 3;
-            //int expected = new CustomList<int>() { 4, 5 };
-            //Act
-            //list.RemoveQuanity(amount);
-            //Assert
-            //Assert.AreEqual(expected, list);
-        //}
-
-        //[TestMethod]
-        //public void RemoveQuanity_Int_2()
-        //{
-            //Arrange
-            //CustomList<int> list = new CustomList<int>() { 1, 1, 1, 1, 1 };
-            //int amount = 2;
-            //int expected = (list = { 1, 1, 1 });
-            //Act
-            //list.RemoveQuanity(amount);
-            //Assert
-            //Assert.AreEqual(expected, list);
-        //}
-
         [TestMethod]
         public void Remove_String_Count()
         {
@@ -620,7 +594,7 @@ namespace CustomListTests
         public void Count_Int()
         {
             //Arrange
-            
+
             CustomList<int> list = new CustomList<int>() { 1, 2, 5, 3, 5, 6, 5 };
             int expected = 7;
             //Act
@@ -633,13 +607,91 @@ namespace CustomListTests
         public void Count_String()
         {
             //Arrange
-
             CustomList<string> list = new CustomList<string>() { "hello", "goodbye", "shalome", "adios" };
             int expected = 4;
             //Act
             list.GetCount();
             //Assert
             Assert.AreEqual(expected, list.Count);
+        }
+
+        //Here Down are ToString Tests.
+
+        [TestMethod]//not sure how to do this.
+        public void Override_ToString_String()
+        {
+            //Arrange
+            CustomList<string> greetings = new CustomList<string>() { "hello", "goodbye", "shalome", "adios" };
+            string expected = "hello\n goodbye\n shalome\n adios";
+            //Act
+            string result = greetings.ToString();
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]//not sure how to do this.
+        public void Override_ToString_Int()
+        {
+            //Arrange
+            CustomList<int> numbers = new CustomList<int>() { 1, 3, 5, 3, 2, 5, 2 };
+            string expected = "1\n 3\n 5\n 3\n 2\n 5\n 2";
+            //Act
+            string result = numbers.ToString();
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]//not sure how to do this.
+        public void Override_ToString_Objects()
+        {
+            //Arrange
+            CustomList<CustomObject> objects = new CustomList<CustomObject>() { object1, object2, object3, object4 };
+            string expected = "object1\n object2\n object3\n object4";
+            //Act
+            string result = objects.ToString();
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        //Here Down are zip tests.
+
+        [TestMethod]
+        public void Zip_Objects()
+        {
+            //Arrange
+            CustomList<CustomObject> objectsOdd = new CustomList<CustomObject>() { object1, object3, };
+            CustomList<CustomObject> objectsEven = new CustomList<CustomObject>() { object2, object4 };
+            CustomList<CustomObject> expected = new CustomList<CustomObject>() { object1, object2, object3, object4 };
+            //Act
+            CustomList<CustomObject> result = objectsOdd.ZipTo(objectsEven);
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void Zip_Int()
+        {
+            //Arrange
+            CustomList<int> odds = new CustomList<int>() { 1, 3, 5 };
+            CustomList<int> evens = new CustomList<int>() { 2, 4, 6 };
+            CustomList<int> expected = new CustomList<int>() { 1, 2, 3, 4, 5, 6 };
+            //Act
+            CustomList<int> result = odds.ZipTo(evens);
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void Zip_Int()
+        {
+            //Arrange
+            CustomList<string> greetings = new CustomList<string>() { "Hello", "Hola", "Sup" };
+            CustomList<string> goodbyes = new CustomList<string>() { "GoodBye", "Adios", "Cya" };
+            CustomList<string> expected = new CustomList<string>() { "Hello", "GoodBye", "Hola", "Adios", "Sup", "Cya" };
+            //Act
+            CustomList<string> result = greetings.ZipTo(goodbyes);
+            //Assert
+            Assert.AreEqual(expected, result);
         }
     }
 }
