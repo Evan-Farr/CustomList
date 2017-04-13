@@ -51,11 +51,24 @@ namespace CustomList
                 if (item.Equals(array[i]))
                 {
                     array[i] = default(T);
+                    Shift();
                     count--;
                     return true;
                 }
             }
             return false;
+        }
+        
+        public void Shift()
+        {
+            for(int i = 0; i < count; i++)
+            {
+                if (array[i].Equals(default(T)))
+                {
+                    array[i] = array[i + 1];
+                    array[i + 1] = default(T);
+                }
+            }
         }
 
         public CustomList<T> ZipTo(CustomList<T> secondArray)
