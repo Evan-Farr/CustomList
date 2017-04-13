@@ -15,11 +15,12 @@ namespace CustomList
 
         public int Count { get { return count; } }
         public int Capacity { get { return capacity; } }
+        public T this[int i] { get { return array[i]; } set { array[i] = value; } }
 
         public CustomList()
         {
             count = 0;
-            capacity = 2;
+            capacity = 5;
             array = new T[capacity];
         }
 
