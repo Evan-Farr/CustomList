@@ -50,30 +50,22 @@ namespace CustomList
             {
                 if (item.Equals(array[i]))
                 {
-                    array[i] = default(T);
-                    if(array[i].Equals(array[count - 1]))
-                    {
-                        count--;
-                        return true;
-                    }
-                    Shift();
+                    if(array[i].Equals(array[count - 1])) { array[i] = default(T); }
+                    Shift(i);
                     count--;
                     return true;
                 }
             }
             return false;
         }
-        
-        public void Shift()
+
+        public void Shift(int position)
         {
-            for(int i = 0; i < count; i++)
+            for (int j = position; j < count; j++)
             {
-                if (array[i].Equals(default(T)))
-                {
-                    array[i] = array[i + 1];
-                    array[i + 1] = default(T);
-                }
+                array[j] = array[j + 1];
             }
+            array[count - 1] = default(T);
         }
 
         public CustomList<T> ZipTo(CustomList<T> secondArray)
