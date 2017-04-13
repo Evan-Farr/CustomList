@@ -44,6 +44,42 @@ namespace CustomList
             array = tempArray;
         }
 
+        public bool Remove(T item)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                if (item.Equals(array[i]))
+                {
+                    array[i] = default(T);
+                    count--;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public CustomList<T> ZipTo(CustomList<T> secondArray)
+        {
+            CustomList<T> zippedArray = new CustomList<T>();
+            int smallest = count <= secondArray.count ? count : secondArray.count;
+            for (int i = 0; i < smallest; i++)
+            {
+                zippedArray.Add(array[i]);
+                zippedArray.Add(secondArray[i]);
+            }
+            return zippedArray;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
         //static int GetValueFromArray(T[] array, int i)
         //{
         //    try
@@ -56,15 +92,5 @@ namespace CustomList
         //        throw argEx;
         //    }
         //}
-
-        public IEnumerator<T> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
