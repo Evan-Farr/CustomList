@@ -51,6 +51,11 @@ namespace CustomList
                 if (item.Equals(array[i]))
                 {
                     array[i] = default(T);
+                    if(array[i].Equals(array[count - 1]))
+                    {
+                        count--;
+                        return true;
+                    }
                     Shift();
                     count--;
                     return true;

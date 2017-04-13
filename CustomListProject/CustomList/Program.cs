@@ -10,9 +10,6 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
-            //mike's comments:
-            //List<int> x = new List<int>();
-            //x.Count;
 
             //Customer<int> custom = new Customer<int>();
             //custom.Count;
@@ -31,6 +28,15 @@ namespace CustomList
             //CustomList<int> zippedArray = array.ZipTo(arrayTwo);
             //List<int> list = new List<int>();
             //list[5] = 3;
+
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
+            list.Remove(2);
+            list.Remove(4);
+
+
+            CustomList<string> list2 = new CustomList<string>() { "vikings", "bears", "lions", "packers" };
+            list2.Remove("packers");
+            list2.Remove("vikings");
         }
     }
 }
