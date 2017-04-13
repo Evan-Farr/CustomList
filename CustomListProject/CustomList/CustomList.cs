@@ -44,6 +44,19 @@ namespace CustomList
             array = tempArray;
         }
 
+        //static int GetValueFromArray(T[] array, int i)
+        //{
+        //    try
+        //    {
+        //        return array[i];
+        //    }
+        //    catch (IndexOutOfRangeException ex)
+        //    {
+        //        ArgumentException argEx = new System.ArgumentException("Index is out of range", "index", ex);
+        //        throw argEx;
+        //    }
+        //}
+
         public IEnumerator<T> GetEnumerator()
         {
             throw new NotImplementedException();
