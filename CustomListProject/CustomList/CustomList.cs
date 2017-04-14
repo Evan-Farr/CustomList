@@ -124,6 +124,18 @@ namespace CustomList
             return stringBuilder.ToString();
         }
 
+        public void Sort()
+        {
+
+        }
+
+        private void Swap(int indexA, int indexB)
+        {
+            T holder = array[indexA];
+            array[indexA] = array[indexB];
+            array[indexB] = holder;
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             throw new NotImplementedException();

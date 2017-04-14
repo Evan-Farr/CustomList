@@ -41,9 +41,12 @@ namespace CustomList
             //CustomList<int> list2 = new CustomList<int>() { 1, 2, 3, 4 };
             //CustomList<int> thirdList = list1 - list2;
 
-            CustomList<int> list1 = new CustomList<int>() { 1, 2, 3, 4 };
-            CustomList<int> list2 = new CustomList<int>() { 1, 2, 3, 4 };
-            CustomList<int> thirdList = list1 + list2;
+            //CustomList<int> list1 = new CustomList<int>() { 1, 2, 3, 4 };
+            //CustomList<int> list2 = new CustomList<int>() { 1, 2, 3, 4 };
+            //CustomList<int> thirdList = list1 + list2;
+
+            CustomList<int> list1 = new CustomList<int>() { 1, 2, 3, 4, 4 , 3, 7 };
+            list1.Sort();
         }
     }
 }
