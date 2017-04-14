@@ -33,14 +33,17 @@ namespace CustomList
             //list.Remove(2);
             //list.Remove(4);
 
-
             //CustomList<string> list2 = new CustomList<string>() { "vikings", "bears", "lions", "packers" };
             //list2.Remove("packers");
             //list2.Remove("vikings");
 
+            //CustomList<int> list1 = new CustomList<int>() { 1, 2, 3, 4 };
+            //CustomList<int> list2 = new CustomList<int>() { 1, 2, 3, 4 };
+            //CustomList<int> thirdList = list1 - list2;
+
             CustomList<int> list1 = new CustomList<int>() { 1, 2, 3, 4 };
             CustomList<int> list2 = new CustomList<int>() { 1, 2, 3, 4 };
-            CustomList<int> thirdList = list1 - list2;
+            CustomList<int> thirdList = list1 + list2;
         }
     }
 }

@@ -80,6 +80,16 @@ namespace CustomList
             return zippedArray;
         }
 
+        public static CustomList<T> operator +(CustomList<T> firstArray, CustomList<T> secondArray)
+        {
+            CustomList<T> thirdArray = firstArray;
+            for (int i = 0; i < secondArray.count; i++)
+            {
+                thirdArray.Add(secondArray[i]);
+            }
+            return thirdArray;
+        }
+
         public static CustomList<T> operator -(CustomList<T> firstArray, CustomList<T> secondArray)
         {
             CustomList<T> thirdArray = new CustomList<T>();

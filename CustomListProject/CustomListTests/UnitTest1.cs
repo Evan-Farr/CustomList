@@ -751,44 +751,57 @@ namespace CustomListTests
 
         ////Here Down are Overloading + operator tests
 
-        //[TestMethod]
-        //public void OverLoad_Plus_Int()
-        //{
-        //    //Arrange
-        //    CustomList<int> firstList = new CustomList<int>() { 1, 3, 5 };
-        //    CustomList<int> secondList = new CustomList<int>() { 2, 4, 6 };
-        //    CustomList<int> expected = new CustomList<int>() { 1, 3, 5, 2, 4, 6 };
-        //    //Act
-        //    CustomList<int> thirdList = firstList + secondList;
-        //    //Assert
-        //    Assert.AreEqual(expected, thirdList);
-        //}
+        [TestMethod]
+        public void OverLoad_Plus_Int()
+        {
+            //Arrange
+            CustomList<int> firstList = new CustomList<int>() { 1, 3, 5 };
+            CustomList<int> secondList = new CustomList<int>() { 2, 4, 6 };
+            CustomList<int> expected = new CustomList<int>() { 1, 3, 5, 2, 4, 6 };
+            //Act
+            CustomList<int> result = firstList + secondList;
+            //Assert
+            for (int i = 0; i < expected.Count; i++)
+            {
+                Assert.AreEqual(expected[i], result[i]);
+            }
+        }
 
-        //[TestMethod]
-        //public void OverLoad_Plus_String()
-        //{
-        //    //Arrange
-        //    CustomList<string> firstList = new CustomList<string>() { "Hello", "Hola", "Sup" };
-        //    CustomList<string> secondList = new CustomList<string>() { "GoodBye", "Adios", "Cya" };
-        //    CustomList<string> expected = new CustomList<string>() { "Hello", "Hola", "Sup", "GoodBye", "Adios", "Cya" };
-        //    //Act
-        //    CustomList<string> thirdList = firstList + secondList;
-        //    //Assert
-        //    Assert.AreEqual(expected, thirdList);
-        //}
+        [TestMethod]
+        public void OverLoad_Plus_String()
+        {
+            //Arrange
+            CustomList<string> firstList = new CustomList<string>() { "Hello", "Hola", "Sup" };
+            CustomList<string> secondList = new CustomList<string>() { "GoodBye", "Adios", "Cya" };
+            CustomList<string> expected = new CustomList<string>() { "Hello", "Hola", "Sup", "GoodBye", "Adios", "Cya" };
+            //Act
+            CustomList<string> result = firstList + secondList;
+            //Assert
+            for (int i = 0; i < expected.Count; i++)
+            {
+                Assert.AreEqual(expected[i], result[i]);
+            }
+        }
 
-        //[TestMethod]
-        //public void OverLoad_Plus_Object()
-        //{
-        //    //Arrange
-        //    CustomList<CustomObject> firstList = new CustomList<CustomObject>() { object1, object3, };
-        //    CustomList<CustomObject> secondList = new CustomList<CustomObject>() { object2, object4 };
-        //    CustomList<CustomObject> expected = new CustomList<CustomObject>() { object1, object3, object2, object4 };
-        //    //Act
-        //    CustomList<CustomObject> thirdList = firstList + secondList;
-        //    //Assert
-        //    Assert.AreEqual(expected, thirdList);
-        //}
+        [TestMethod]
+        public void OverLoad_Plus_Object()
+        {
+            //Arrange
+            CustomObject object1 = new CustomObject();
+            CustomObject object2 = new CustomObject();
+            CustomObject object3 = new CustomObject();
+            CustomObject object4 = new CustomObject();
+            CustomList<CustomObject> firstList = new CustomList<CustomObject>() { object1, object3, };
+            CustomList<CustomObject> secondList = new CustomList<CustomObject>() { object2, object4 };
+            CustomList<CustomObject> expected = new CustomList<CustomObject>() { object1, object3, object2, object4 };
+            //Act
+            CustomList<CustomObject> result = firstList + secondList;
+            //Assert
+            for (int i = 0; i < expected.Count; i++)
+            {
+                Assert.AreEqual(expected[i], result[i]);
+            }
+        }
 
         //Here Down are Overloading - operator tests
 
