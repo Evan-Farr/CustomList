@@ -15,7 +15,12 @@ namespace CustomList
 
         public int Count { get { return count; } }
         public int Capacity { get { return capacity; } }
-        public T this[int i] { get { return array[i]; } set { array[i] = value; } }
+        public T this[int i] { get { return array[i]; } set { array[i] = /*GetValueFromArray(*/value/*)*/; } }
+
+        //private T GetValueFromArray(T value)
+        //{
+        //    throw new IndexOutOfRangeException();
+        //}
 
         public CustomList()
         {
@@ -146,7 +151,7 @@ namespace CustomList
             throw new NotImplementedException();
         }
 
-        //static int GetValueFromArray(T[] array, int i)
+        //public static T GetValueFromArray(T[] array, int i)
         //{
         //    try
         //    {

@@ -10,15 +10,12 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
-
-            //Customer<int> custom = new Customer<int>();
-            //custom.Count;
-            //CustomList<int> array = new CustomList<int>();
-            //array.Add(1);
-            //array.Add(5);
-            //array.Add(9);
-            //array.Remove(1);
-            //array[10] = 5; // this is where the bug is.
+            CustomList<int> array = new CustomList<int>();
+            array.Add(1);
+            array.Add(5);
+            array.Add(9);
+            array.Remove(1);
+            array[10] = 5; // this is where the bug is.
 
             //CustomList<int> arrayTwo = new CustomList<int>();
             //arrayTwo.Add(1);
@@ -45,8 +42,18 @@ namespace CustomList
             //CustomList<int> list2 = new CustomList<int>() { 1, 2, 3, 4 };
             //CustomList<int> thirdList = list1 + list2;
 
-            CustomList<int> list1 = new CustomList<int>() { 1, 2, 3, 4, 4 , 3, 7 };
-            list1.Sort();
+            //CustomList<int> list1 = new CustomList<int>() { 1, 2, 3, 4, 4 , 3, 7 };
+            //list1.Sort();
+
+            //CustomList<string> list2 = new CustomList<string>() { "vikings", "bears", "lions", "packers" };
+            //list2.Sort();
+
+            //CustomObject object1 = new CustomObject();
+            //CustomObject object2 = new CustomObject();
+            //CustomObject object3 = new CustomObject();
+            //CustomObject object4 = new CustomObject();
+            //CustomList<CustomObject> list3 = new CustomList<CustomObject>() { object1, object3, object2, object4 };
+            //list3.Sort();
         }
     }
 }
