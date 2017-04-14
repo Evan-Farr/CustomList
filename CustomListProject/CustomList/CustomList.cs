@@ -50,9 +50,9 @@ namespace CustomList
             {
                 if (item.Equals(array[i]))
                 {
-                    if(array[i].Equals(array[count - 1])) { array[i] = default(T); }
-                    Shift(i);
+                    if(array[i].Equals(array[count - 1])) { array[i] = default(T); count--; return true; }
                     count--;
+                    Shift(i);
                     return true;
                 }
             }
@@ -65,7 +65,7 @@ namespace CustomList
             {
                 array[j] = array[j + 1];
             }
-            array[count - 1] = default(T);
+            array[count] = default(T);
         }
 
         public CustomList<T> ZipTo(CustomList<T> secondArray)
@@ -78,6 +78,29 @@ namespace CustomList
                 zippedArray.Add(secondArray[i]);
             }
             return zippedArray;
+        }
+
+        public static CustomList<T> operator -(CustomList<T> firstArray, CustomList<T> secondArray)
+        {
+            CustomList<T> thirdArray = new CustomList<T>();
+            for (int i = 0; i < firstArray.count; i++)
+            {
+                thirdArray[i] = firstArray[i];
+                thirdArray.count++;
+            }
+            for(int t = 0; t < thirdArray.count; t++)
+            {
+                for (int j = 0; j < secondArray.count; j++)
+                {
+                    if (thirdArray[t].Equals(secondArray[j]))
+                    {
+                        thirdArray.Remove(thirdArray[t]);
+                        t--;
+                        break;
+                    }
+                }
+            }
+            return thirdArray;
         }
 
         public override string ToString()
