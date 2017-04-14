@@ -628,7 +628,7 @@ namespace CustomListTests
         {
             //Arrange
             CustomList<string> greetings = new CustomList<string>() { "hello", "goodbye", "shalome", "adios" };
-            string expected = "hello\n goodbye\n shalome\n adios";
+            string expected = "hello\ngoodbye\nshalome\nadios\n";
             //Act
             string result = greetings.ToString();
             //Assert
@@ -640,7 +640,7 @@ namespace CustomListTests
         {
             //Arrange
             CustomList<int> numbers = new CustomList<int>() { 1, 3, 5, 3, 2, 5, 2 };
-            string expected = "1\n 3\n 5\n 3\n 2\n 5\n 2";
+            string expected = "1\n3\n5\n3\n2\n5\n2\n";
             //Act
             string result = numbers.ToString();
             //Assert
@@ -656,7 +656,7 @@ namespace CustomListTests
             CustomObject object3 = new CustomObject();
             CustomObject object4 = new CustomObject();
             CustomList<CustomObject> objects = new CustomList<CustomObject>() { object1, object2, object3, object4 };
-            string expected = "object1\n object2\n object3\n object4";
+            string expected = $"{object1}\n{object2}\n{object3}\n{object4}\n";
             //Act
             string result = objects.ToString();
             //Assert

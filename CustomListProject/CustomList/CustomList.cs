@@ -80,6 +80,17 @@ namespace CustomList
             return zippedArray;
         }
 
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            for(int i = 0; i < count; i++)
+            {
+                stringBuilder.Append(array[i].ToString() + "\n");
+            }
+
+            return stringBuilder.ToString();
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             throw new NotImplementedException();
