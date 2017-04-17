@@ -148,9 +148,9 @@ namespace CustomList
 
         public void SetValueInArray( int i, T value)
         {
-            if(i > capacity)
+            if(i >= capacity)
             {
-                while (i > capacity)
+                while (i >= capacity)
                 {
                     Grow();
                 }
