@@ -156,6 +156,7 @@ namespace CustomList
                 }
             }
             array[i] = value;
+            count++;
         }
 
         public static T GetValueFromArray(T[] array, int i)
