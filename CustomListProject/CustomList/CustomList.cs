@@ -15,12 +15,7 @@ namespace CustomList
 
         public int Count { get { return count; } }
         public int Capacity { get { return capacity; } }
-        public T this[int i] { get { return array[i]; } set { array[i] = /*GetValueFromArray(*/value/*)*/; } }
-
-        //private T GetValueFromArray(T value)
-        //{
-        //    throw new IndexOutOfRangeException();
-        //}
+        public T this[int i] { get { return GetValueFromArray(array, i); } set { SetValueInArray( i, value); } }
 
         public CustomList()
         {
@@ -151,17 +146,29 @@ namespace CustomList
             throw new NotImplementedException();
         }
 
-        //public static T GetValueFromArray(T[] array, int i)
-        //{
-        //    try
-        //    {
-        //        return array[i];
-        //    }
-        //    catch (IndexOutOfRangeException ex)
-        //    {
-        //        ArgumentException argEx = new System.ArgumentException("Index is out of range", "index", ex);
-        //        throw argEx;
-        //    }
-        //}
+        public void SetValueInArray( int i, T value)
+        {
+            if(i > capacity)
+            {
+                while (i > capacity)
+                {
+                    Grow();
+                }
+            }
+            array[i] = value;
+        }
+
+        public static T GetValueFromArray(T[] array, int i)
+        {
+            try
+            {
+                return array[i];
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                ArgumentException argEx = new System.ArgumentException("Index is out of range", "index", ex);
+                throw argEx;
+            }
+        }
     }
 }
