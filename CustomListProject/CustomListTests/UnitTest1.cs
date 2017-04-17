@@ -856,21 +856,5 @@ namespace CustomListTests
                 Assert.AreEqual(expected[i], result[i]);
             }
         }
-
-        //Here Down are indexer tests.
-
-        //[TestMethod]
-        //public void Indexer()
-        //{
-        //    //Arrange
-        //    CustomObject object1 = new CustomObject();
-        //    CustomObject object2 = new CustomObject();
-        //    CustomObject object3 = new CustomObject();
-        //    CustomList<CustomObject> list = new CustomList<CustomObject>() { object1, object2 };
-        //    //Act
-
-        //    //Assert
-        //    Assert.;
-        //}
     }
 }
