@@ -124,10 +124,10 @@ namespace CustomList
             return stringBuilder.ToString();
         }
 
-        public void Sort()
-        {
+        //public void Sort()
+        //{
 
-        }
+        //}
 
         private void Swap(int indexA, int indexB)
         {
